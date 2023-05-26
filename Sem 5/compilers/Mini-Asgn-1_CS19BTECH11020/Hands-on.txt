@@ -1,0 +1,49 @@
+Error Handling in C++ :-
+A compiler scans the whole code in one go and gives out all the errors and warnings in the end  as follows.
+For the following code :-
+
+#include <stdio.h>
+
+void main()
+{
+    printf(a);
+    printf(b);
+}
+
+The following will be the output :-
+
+main.c: In function ‘main’:
+main.c:13:12: error: ‘a’ undeclared (first use in this function)
+     printf(a);
+            ^
+main.c:13:12: note: each undeclared identifier is reported only once for each function it appears in main.c:14:12: error: ‘b’ undeclared (first use in this function)
+     printf(b);
+            ^
+We can see that all the errors in the code were given out at once.
+
+Error Handling in Python :-
+An interpreter goes through the code line by line, so the errors will be shown line by line as we  resolve each of them. 
+For the following code :-
+
+print (a)
+print(b)
+
+The following will be the output :-
+	print(a)
+NameError: name 'a' is not defined
+
+In the given code, there are two errors as the two variables a and b are not defined. But as the  interpreter goes line by line, it only shows the first error i.e., variable a.
+
+If we modify the above code into 
+
+a=5
+print(a)
+print(b)
+
+The the output will be the following :-
+
+5
+	print(b)
+NameError: name 'b' is not defined
+
+Here the first error has been resolved, so the interpreter is showing the next error.
